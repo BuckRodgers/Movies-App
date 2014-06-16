@@ -26,11 +26,25 @@ namespace MvcMovie.Controllers
         
         //HelloWorld/Welcome?name=ryan&numTimes=5
 
+        public ActionResult Welcome(String name, int numTimes = 1)
+        {
+            //protection against javascript maliciuos input
+            //return HttpUtility.HtmlEncode("Hello " + name + ", NumTimes is: " + numTimes);
+            //return "this is the welcome action method....";
+
+            ViewBag.Message = "Hello " + name;
+            ViewBag.NumTimes = numTimes;
+
+            return View();
+
+        }
+        /*
         public string Welcome(String name, int numTimes = 1)
         {
             //protection against javascript maliciuos input
             return HttpUtility.HtmlEncode("Hello " + name + ", NumTimes is: " + numTimes);
             //return "this is the welcome action method....";
         }
+         * */
 	}
 }
