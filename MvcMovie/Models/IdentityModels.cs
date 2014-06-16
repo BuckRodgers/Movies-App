@@ -10,7 +10,7 @@ namespace MvcMovie.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection")
+            : base("DefaultConnection") //same name as in connectionString
         {
         }
     }
